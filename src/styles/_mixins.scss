@@ -1,0 +1,16 @@
+@import './variables';
+
+
+@mixin data-attribute-colors($data-attribute-name: 'color', $property: 'color') {
+  @each $key, $color in $colors {
+    &[data-#{$data-attribute-name}=#{$key}] {
+      #{$property}: $color;
+    }
+  }
+}
+
+@mixin transition-ease-in-out($properties, $duration: 'fast') {
+  transition-property: $properties;
+  transition-duration: map-get($transition-durations, $duration);
+  transition-timing-function: ease-in-out;
+}

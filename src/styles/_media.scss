@@ -1,0 +1,16 @@
+$breakpoints: (
+  small: 35rem,
+  medium: 48rem,
+  large: 67.5rem,
+  xlarge: 85.375rem,
+);
+
+@function get-breakpoint($key) {
+  @return map-get($breakpoints, $key);
+}
+
+@mixin media($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
