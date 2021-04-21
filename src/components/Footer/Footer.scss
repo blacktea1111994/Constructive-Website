@@ -1,0 +1,44 @@
+@import "../../styles/variables";
+@import "../../styles/media";
+
+.footer {
+  padding: 1rem 0.75rem;
+  ul {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(5, 2rem);
+    column-gap: 0.5rem;
+    li {
+      img {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.05);
+          transition: transform 0.5s ease-in-out;
+        }
+      }
+      .tooltip {
+        visibility: hidden;
+        position: absolute;
+        transform: translate(-50%, -2rem);
+        font-size: 0.75em;
+      }
+      &:hover .tooltip {
+        visibility: visible;
+      }
+    }
+  }
+  .copyright {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@include media(get-breakpoint("medium")) {
+  .footer {
+    padding: 2.5rem 5rem;
+  }
+}

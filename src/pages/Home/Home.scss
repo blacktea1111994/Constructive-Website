@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+@import "../../styles/media";
+
+.home {
+  article {
+    max-width: 60ch;
+    text-align: center;
+    p {
+      margin: 2.5rem 0;
+      span {
+        font-weight: 600;
+        color: get-color("green");
+      }
+    }
+  }
+}

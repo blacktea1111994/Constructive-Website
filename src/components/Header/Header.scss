@@ -1,0 +1,52 @@
+@import "../../styles/variables";
+@import "../../styles/media";
+
+.mobile {
+  width: 100%;
+  background: white;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  position: fixed;
+  .headerContentWrap {
+    padding: 0;
+  }
+  &.isOpen {
+    height: 100vh;
+  }
+}
+.desktop {
+  display: none;
+}
+
+@include media(get-breakpoint("medium")) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+    .headroom {
+      top: 0;
+      left: 0;
+      z-index: 1;
+      &--unfixed {
+        position: relative;
+        transform: translateY(0);
+      }
+      &--scrolled {
+        transition: transform 200ms ease-in-out;
+      }
+      &--unpinned {
+        position: fixed;
+        transform: translateY(-100%);
+      }
+      &--pinned {
+        position: fixed;
+        transform: translateY(0%);
+      }
+      .headerContentWrap {
+        padding: 0 2rem;
+      }
+    }
+  }
+}

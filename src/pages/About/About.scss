@@ -1,0 +1,73 @@
+@import "../../styles/variables";
+@import "../../styles/media";
+
+.about {
+  .bio {
+    text-align: center;
+    p span {
+      font-size: 2.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    .photoContainer {
+      --size: 14rem;
+      position: relative;
+      width: var(--size);
+      height: var(--size);
+      margin: 0 auto;
+      border-radius: 100vw;
+      border: 0.25rem solid get-color("green");
+      background-image: url("../../static/social/photo.jpg");
+      object-fit: cover;
+      background-size: cover;
+    }
+  }
+  .essentialSkills {
+    li {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@include media(get-breakpoint("medium")) {
+  .about {
+    align-items: center;
+    .essentialSkills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      align-items: stretch;
+      li {
+      }
+    }
+  }
+}
+
+@include media(get-breakpoint("large")) {
+  .about {
+    .bio {
+      display: grid;
+      grid-template-areas: "bio photo";
+      grid-template-columns: auto 16rem;
+      column-gap: 2.5rem;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      p {
+        grid-area: bio;
+        max-width: 40ch;
+        font-family: "Roboto Slab";
+        span {
+          font-size: 3rem;
+        }
+      }
+      .photoContainer {
+        grid-area: photo;
+        --size: 16rem;
+      }
+    }
+    .essentialSkills {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

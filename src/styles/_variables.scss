@@ -1,51 +1,11 @@
 $colors: (
-  'dark': #0D0D21,
-  'gray': #9E9EA7,
-  'light-gray': #E0E0E0,
-  'white-smoke': #F8F8F8,
-  'coconut': #FEFEFE,
-  'white': #FFFFFF,
-  'salmon': #F15145,
-  'red': #ff0000,
-  'green': #14C310,
-  'transparent': transparent,
-);
-
-$border-radiuses: (
-  'tiny': 0.125rem,
-  'small': 0.25rem,
-  'medium': 0.5rem,
-  'large': 1rem,
-  'x-large': 1.125rem,
-);
-
-$transition-durations: (
-  'bullet': 50ms,
-  'fast': 150ms,
-  'normal': 250ms,
-  'slow': 350ms,
-  'turtle': 500ms,
-);
-
-$box-shadows: (
-  'dark': 0 3.125rem 11.5rem rgba(13, 13, 33, 0.08),
-  'tile-shadow': 0 0 1.5rem rgba(13, 13, 33, 0.08),
+  "dark": #0d0d21,
+  "gray": #808080,
+  "green": #00c07f,
 );
 
 @function get-color($key) {
   @return map-get($colors, $key);
-}
-
-@function get-border-radius($key) {
-  @return map-get($border-radiuses, $key);
-}
-
-@function get-transition-duration($key) {
-  @return map-get($transition-durations, $key);
-}
-
-@function get-box-shadow($key) {
-  @return map-get($box-shadows, $key);
 }
 
 @each $key, $value in $colors {

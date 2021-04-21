@@ -1,0 +1,118 @@
+@import '../../styles/variables';
+@import '../../styles/media'; 
+
+.label {
+  display: grid;
+  gap: .25rem;
+  width: 100%;
+  position: relative;
+  .labelText {
+    display: block;
+    font-size: .75rem;
+    font-weight: bold;
+    color: get-color('gray');
+    text-transform: uppercase;
+    &[data-required=true]::after {
+      content: ' *';
+      color: get-color('salmon');
+    }
+  }
+  fieldset {
+    position: relative;
+    input {
+      width: 100%;
+      font-size: 1rem;
+      font-family: inherit;
+      background-color: get-color('white-smoke');
+      border: 1px solid get-color('light-gray');
+      border-radius: 1rem;
+      padding: .75em 1em;
+      &[data-invalid=true] {
+        border-color: get-color('salmon');
+      }
+      
+      &::placeholder {
+        color: get-color('gray');
+      }
+      &:focus {
+        outline: none;
+        border-color: get-color('gray');
+      }
+    }
+    .icons {
+      position: absolute;
+      right: 1rem;
+      bottom: 50%;
+      transform: translateY(50%);
+      display: flex;
+
+      .showPasswordButton {
+        all: unset;
+        display: grid;
+        order: 2;
+        cursor: pointer;
+        place-content: center;
+      }
+      .warningIcon {
+        order: 1;
+      }
+    }
+  }
+  .errorMessage {
+    color: get-color('salmon');
+    justify-self: flex-end;
+    font-size: .75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    &::before {
+      content: '*';
+    }
+  }
+  &[data-input-type=checkbox] {
+    grid-template-columns: min-content 1fr;
+    gap: 1rem;
+    .labelText {
+      all: unset;
+      order: 2;
+      
+      &[data-required=true]::before {
+        content: '* ';
+        color: get-color('salmon');
+      }
+      &[data-required=true]::after {
+        content: '';
+      }
+    }
+    fieldset {
+      order: 1;
+      input {
+        --size: 1.125rem;
+        padding: 0;
+        margin: 0;
+        width: var(--size);
+        height: var(--size);
+        appearance: none;
+        background-color: get-color('white-smoke');
+        border: 1px solid get-color('light-gray');
+        border-radius: .25rem;
+        cursor: pointer;
+        &:checked {
+          background-color: get-color('dark');
+          border-color: get-color('dark');
+          display: grid;
+          place-content: center;
+          &::after {
+            content: url('../../static/icons/checkmark.svg');
+          }
+        }
+      }
+      .warningIcon {
+        display: none;
+      }
+    }
+    .errorMessage {
+      grid-column: span 2;
+      order: 3;
+    }
+  }
+}

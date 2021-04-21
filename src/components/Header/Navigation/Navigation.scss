@@ -1,0 +1,88 @@
+@import "../../../styles/variables";
+@import "../../../styles/media";
+
+.navigation {
+  display: grid;
+  background: white;
+  height: 3.5rem;
+  ul {
+    text-align: center;
+    .navHeader {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      top: -0.5rem;
+      padding: 0.5rem 1rem;
+      border-bottom: 0.125rem solid get-color("green");
+      background-color: get-color("green");
+      .logo {
+        height: 2.5rem;
+      }
+    }
+    li {
+      margin: 1rem 0;
+    }
+  }
+}
+
+@include media(get-breakpoint("medium")) {
+  .navigation {
+    display: flex;
+    border-bottom: 0.25rem solid get-color("green");
+    height: 4.5rem;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .logo {
+        margin-right: 1rem;
+        height: 2.5rem;
+      }
+      li {
+        display: block;
+        font-size: 1rem;
+        font-weight: 400;
+        a {
+          padding: 1rem 0.5rem;
+          position: relative;
+          &:hover {
+            color: get-color("green");
+          }
+        }
+        a:after {
+          background: none repeat scroll 0 0 transparent;
+          bottom: 0.5rem;
+          content: "";
+          height: 0.25rem;
+          left: 50%;
+          position: absolute;
+          background: get-color("green");
+          transition: width 0.3s ease 0s, left 0.3s ease 0s;
+          width: 0;
+        }
+        a:hover:after {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+@include media(get-breakpoint("large")) {
+  .navigation {
+    height: 5rem;
+    ul {
+      .logo {
+        margin-right: 2rem;
+        height: 3.5rem;
+      }
+      li {
+        font-size: 1.25rem;
+        a {
+          padding: 1rem 1.25rem;
+        }
+      }
+    }
+  }
+}
