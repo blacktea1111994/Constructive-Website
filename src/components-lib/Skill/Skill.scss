@@ -3,6 +3,7 @@
 
 .skill {
   text-align: center;
+  font-family: "Roboto Slab";
   .imageContainer {
     --size: 6rem;
     position: relative;
@@ -22,7 +23,6 @@
   }
   figcaption {
     p {
-      font-family: "Roboto Slab";
       font-size: 0.85rem;
       padding: 0;
       margin: 0;
