@@ -1,9 +1,17 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import styles from './Button.scss';
+import PropTypes from "prop-types";
+import React from "react";
+import styles from "./Button.scss";
 
-
-const Button = ({ children, className, onClick, color, backgroundColor, text, icon, ...props }) => (
+const Button = ({
+  children,
+  className,
+  onClick,
+  color,
+  backgroundColor,
+  text,
+  icon,
+  ...props
+}) => (
   <button
     className={`${styles.button} ${className}`}
     data-background-color={backgroundColor}

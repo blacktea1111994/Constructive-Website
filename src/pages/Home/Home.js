@@ -1,5 +1,4 @@
 import React from "react";
-import ContentWrap from "../../components-lib/ContentWrap/ContentWrap";
 import PrismCode from "../../components-lib/PrismCode/PrismCode";
 import styles from "./Home.scss";
 

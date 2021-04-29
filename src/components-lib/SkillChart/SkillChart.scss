@@ -1,0 +1,46 @@
+@import "../../styles/variables";
+
+.skillChart {
+  display: flex;
+  flex-flow: row nowrap;
+  .chart {
+    position: relative;
+    width: 12rem;
+    justify-content: space-around;
+    margin: 0 auto;
+    svg {
+      display: block;
+      margin: auto;
+      max-width: 80%;
+      max-height: 15.625rem;
+      .circleBg {
+        fill: none;
+        stroke: #eee;
+        stroke-width: 3.8;
+      }
+      .circle {
+        fill: none;
+        stroke: orange;
+        stroke-width: 2.8;
+        stroke-linecap: round;
+        animation: progress 2s ease-out forwards;
+        .animation {
+          animation: progress 2s ease-out forwards;
+        }
+      }
+      @keyframes progress {
+        0% {
+          stroke-dasharray: 0 100;
+        }
+      }
+    }
+    img {
+      width: 4.5rem;
+      height: 4.5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

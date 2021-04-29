@@ -2,8 +2,10 @@
 @import "../../styles/media";
 
 .skill {
+  //display: grid;
   text-align: center;
   font-family: "Roboto Slab";
+  //margin: 2rem auto;
   .imageContainer {
     --size: 6rem;
     position: relative;
@@ -23,12 +25,12 @@
   }
   figcaption {
     p {
-      font-size: 0.85rem;
+      font-size: 1rem;
       padding: 0;
       margin: 0;
     }
     .title {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 700;
       line-height: 1.5rem;
       margin-bottom: 0.5rem;

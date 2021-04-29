@@ -1,34 +1,34 @@
-@import '../../styles/variables';
-@import '../../styles/media';
-@import '../../styles/mixins';
-
+@import "../../styles/variables";
+@import "../../styles/media";
+@import "../../styles/mixins";
 
 .button {
   border: none;
   width: 100%;
   color: white;
-  background-color: get-color('dark');
+  background-color: get-color("dark");
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 .5rem 3rem rgba(13, 13, 33, 0.12);
+  box-shadow: 0 0.5rem 3rem rgba(13, 13, 33, 0.12);
   border-radius: 1.125rem;
-  padding: .75rem 2rem;
+  padding: 0.75rem 2rem;
+  margin: 1rem auto;
   text-transform: uppercase;
 
   span {
     font-weight: 500;
-    font-family: 'Montserrat';
+    font-family: "Roboto Slab";
     text-align: center;
   }
   .hasIcon {
-    margin-right: .75em;
+    margin-right: 0.75em;
   }
 
   &:hover {
     transform: scale(1.02) perspective(1px);
   }
 
-  @include data-attribute-colors('color', color);
-  @include data-attribute-colors('background-color', background-color);
+  @include data-attribute-colors("color", color);
+  @include data-attribute-colors("background-color", background-color);
 }

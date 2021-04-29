@@ -14,6 +14,8 @@
     .photoContainer {
       --size: 14rem;
       position: relative;
+      display: grid;
+      row-gap: 2rem;
       width: var(--size);
       height: var(--size);
       margin: 0 auto;
@@ -24,9 +26,15 @@
       background-size: cover;
     }
   }
-  .essentialSkills {
-    li {
-      margin-bottom: 2rem;
+  .progSkills {
+    ul {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      row-gap: 1rem;
+    }
+    .loadMoreButton {
+      border: 0.25rem solid get-color("green");
     }
   }
 }
@@ -35,13 +43,23 @@
   .about {
     align-items: center;
     .essentialSkills {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-items: center;
-      align-items: stretch;
-      li:nth-child(3) {
-        position: relative;
-        left: 50%;
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: stretch;
+        li:nth-child(3) {
+          position: relative;
+          left: 50%;
+        }
+      }
+    }
+    .progSkills {
+      .loadMoreButton {
+        display: none;
+      }
+      ul {
+        grid-template-columns: 1fr 1fr 1fr;
       }
     }
   }
@@ -49,6 +67,8 @@
 
 @include media(get-breakpoint("large")) {
   .about {
+    display: grid;
+    row-gap: 4rem;
     .bio {
       display: grid;
       grid-template-areas: "bio photo";
@@ -71,10 +91,15 @@
       }
     }
     .essentialSkills {
-      grid-template-columns: repeat(3, 1fr);
-      li:nth-child(3) {
-        left: unset;
+      ul {
+        grid-template-columns: repeat(3, 1fr);
+        li:nth-child(3) {
+          left: unset;
+        }
       }
+    }
+    .progSkills ul {
+      grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
     }
   }
 }
