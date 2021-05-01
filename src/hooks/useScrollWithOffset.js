@@ -1,14 +1,17 @@
-import { useCallback } from 'react';
+import { useCallback } from "react";
 
-
-const useScrollWithOffset = (offset = -130) => {
+const useScrollWithOffset = (offset = -130, behavior = "smooth") => {
   const scrollWithOffset = useCallback(
-    el => {
+    (el) => {
       const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
       const yOffset = offset;
-      window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+      window.scrollTo({
+        top: yCoordinate + yOffset,
+        behavior: behavior,
+        block: block,
+      });
     },
-    [offset],
+    [offset]
   );
 
   return scrollWithOffset;

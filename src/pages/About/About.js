@@ -1,5 +1,9 @@
 import React, { useRef, useState } from "react";
 import Skill from "../../components-lib/Skill/Skill";
+import travel from "../../static/hobby/travel.svg";
+import draw from "../../static/hobby/draw.svg";
+import tennis from "../../static/hobby/tennis.svg";
+import cooking from "../../static/hobby/cooking.svg";
 import algorithm from "../../static/skills/algorithm.svg";
 import design from "../../static/skills/design.svg";
 import responsive from "../../static/skills/responsive.svg";
@@ -132,6 +136,14 @@ const About = () => {
           &emsp;a student of applied informatics at FMFI UK and a web developer
           with an interest in various branches of information technology such as
           artificial intelligence, android application development and others.
+          <hr />
+          <ul className={styles.hobby}>
+            {[travel, cooking, draw, tennis].map((hobby, index) => (
+              <li key={`hobby-${index}`}>
+                <img alt="hobby icon" src={hobby} />
+              </li>
+            ))}
+          </ul>
         </p>
       </article>
       <article className={styles.essentialSkills}>
@@ -144,7 +156,7 @@ const About = () => {
           ))}
         </ul>
       </article>
-      <article className={styles.progSkills}>
+      <article className={styles.progSkills} id="prog-skills">
         <h1>Skills</h1>
         <ul ref={ref}>
           {onScreen &&
@@ -158,17 +170,18 @@ const About = () => {
               </li>
             ))}
         </ul>
-
-        {visibleSkillsCount < progSkillsCount && (
-          <Button
-            className={styles.loadMoreButton}
-            backgroundColor="white"
-            color="green"
-            onClick={() => loadMoreSkills(6)}
-          >
-            load more
-          </Button>
-        )}
+        <Button
+          className={styles.loadMoreButton}
+          backgroundColor="white"
+          color="green"
+          onClick={() =>
+            visibleSkillsCount < progSkillsCount
+              ? loadMoreSkills(6)
+              : loadMoreSkills(-6)
+          }
+        >
+          {visibleSkillsCount < progSkillsCount ? "load more" : "show less"}
+        </Button>
       </article>
     </main>
   );

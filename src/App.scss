@@ -58,6 +58,11 @@ h2 {
   font-weight: 600;
 }
 
+hr {
+  border-top: 0.15rem solid orange;
+  max-width: 15rem;
+}
+
 @include media(get-breakpoint("medium")) {
   :root {
     --content-wrap-padding: 2.5rem 5rem;
